@@ -7,8 +7,8 @@ import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from
 })
 export class ChildComponent implements OnInit, OnChanges {
 
-  @Input()
   counter!: number;
+  @Input() meNotPresentngOnChanges!: string;
 
   constructor() { }
 
@@ -17,6 +17,14 @@ export class ChildComponent implements OnInit, OnChanges {
     console.log( "The first change is :: " + hereWeGo.firstChange);
     console.log( "The prev change is :: " + hereWeGo.previousValue);
     console.log( "The current change is :: " + hereWeGo.currentValue);
+
+    // this will not come second time coz there is no change in meNotPresentngOnChanges
+    const fomo: SimpleChange = changes['meNotPresentngOnChanges'];
+    if(fomo != undefined){
+    console.log( "The first change is :: " + fomo.firstChange);
+    console.log( "The prev change is :: " + fomo.previousValue);
+    console.log( "The current change is :: " + fomo.currentValue);
+    }
   }
 
   ngOnInit(): void {

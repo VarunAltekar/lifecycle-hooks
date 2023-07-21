@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   private number: number = 2345;
+  thisWillNotBePartOfngOnChanges = "Why";
 
   get counter(){
     return this.number;

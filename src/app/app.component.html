@@ -1,6 +1,9 @@
 <div style="text-align: center">
   <h1>LC Hooks</h1>
   <button (click)="increment()">Increment</button>
-  <app-child [childCounter]="counter"></app-child>
+  <app-child
+    [childCounter]="counter"
+    [meNotPresentngOnChanges]="thisWillNotBePartOfngOnChanges"
+  ></app-child>
   <button (click)="decrement()">Decrement</button>
 </div>
