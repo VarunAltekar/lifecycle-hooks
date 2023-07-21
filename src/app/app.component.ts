@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'lifecycle-hooks';
+  private number: number = 2345;
+
+  get counter(){
+    return this.number;
+  }
+
+  set counter(value: number){
+    this.number = value;
+  }
+
+  increment(){
+    this.number++;
+  }
+
+  decrement(){
+    this.number--;
+  }
 }
